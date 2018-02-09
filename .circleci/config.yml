@@ -57,7 +57,7 @@ jobs:
 
             - add_ssh_keys:
                 fingerprints:
-                    - "${CIRCLECI_SSH_FINGERPRINT}"
+                    - "69:96:19:08:74:1a:ae:06:39:66:e4:b6:a2:1a:a4:a5"
 
             - deploy:
                 name: Deploy to Github Pages
