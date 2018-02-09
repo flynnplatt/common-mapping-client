@@ -40,6 +40,39 @@ import Immutable from "immutable";
 // Disable a test set
 // MiscUtilSpec.findObjectInArray = {};
 
+// Disable tests that deal with the 2D map
+StoreMapSpec.tests.default.test1 = () => {};
+StoreMapSpec.tests.default.test3 = () => {};
+StoreMapSpec.tests.default.test4 = () => {};
+StoreMapSpec.tests.default.test9 = () => {};
+StoreMapSpec.tests.default.test10 = () => {};
+StoreMapSpec.tests.default.test11 = () => {};
+StoreMapSpec.tests.default.test13 = () => {};
+StoreMapSpec.tests.default.test14 = () => {};
+StoreMapSpec.tests.default.test16 = () => {};
+StoreMapSpec.tests.default.test16B = () => {};
+StoreMapSpec.tests.default.test17 = () => {};
+StoreMapSpec.tests.default.test17B = () => {};
+StoreMapSpec.tests.default.test18 = () => {};
+StoreMapSpec.tests.default.test18B = () => {};
+StoreMapSpec.tests.default.test19 = () => {};
+StoreMapSpec.tests.default.test20 = () => {};
+StoreMapSpec.tests.default.test21 = () => {};
+StoreMapSpec.tests.default.test22 = () => {};
+StoreMapSpec.tests.default.test26 = () => {};
+StoreMapSpec.tests.default.test28 = () => {};
+StoreMapSpec.tests.default.test30 = () => {};
+StoreMapSpec.tests.default.test30B = () => {};
+StoreMapSpec.tests.default.test31 = () => {};
+StoreMapSpec.tests.default.test31B = () => {};
+StoreMapSpec.tests.default.test32 = () => {};
+StoreMapSpec.tests.default.test32B = () => {};
+StoreMapSpec.tests.default.test34 = () => {};
+StoreMapSpec.tests.default.test34B = () => {};
+StoreMapSpec.tests.default.test35 = () => {};
+StoreMapSpec.tests.default.test35B = () => {};
+WebWorkerSpec.tests.default.test3 = () => {};
+
 // Run core tests
 const testSuites = [
     CacheSpec,
