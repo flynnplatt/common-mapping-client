@@ -15,12 +15,8 @@ import * as appStrings from "_core/constants/appStrings";
 import appConfig from "constants/appConfig";
 import MiscUtil from "_core/utils/MiscUtil";
 import { MapContextMenu, CoordinateTracker } from "_core/components/Map";
-import {
-    MapContainer,
-    MapControlsContainer,
-    SettingsContainer,
-    ShareContainer
-} from "components/App";
+import { MapContainer, MapControlsContainer, ShareContainer } from "components/App";
+import { SettingsContainer } from "_core/components/Settings";
 import { LayerInfoContainer } from "_core/components/LayerInfo";
 import { LoadingContainer } from "_core/components/Loading";
 import { HelpContainer } from "_core/components/Help";
