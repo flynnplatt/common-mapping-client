@@ -12,7 +12,6 @@
     "open:dist": "babel-node scripts/distServer.js",
     "prebuild": "npm run prep:dist",
     "build": "babel-node scripts/build.js > dist/build-report.txt",
-    "build:examples": "babel-node scripts/buildExamples.js && scripts/postbuildExamples.sh",
     "postbuild": "scripts/postbuild.sh",
     "build:html": "babel-node scripts/buildHtml.js",
     "prep:dist": "npm run clean:dist && mkdir dist",
