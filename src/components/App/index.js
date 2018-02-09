@@ -6,3 +6,4 @@
 export { default as AppContainer } from "components/App/AppContainer.js";
 export { default as MapContainer } from "components/App/MapContainer.js";
 export { default as MapControlsContainer } from "components/App/MapControlsContainer.js";
+export { default as SettingsContainer } from "components/App/SettingsContainer.js";

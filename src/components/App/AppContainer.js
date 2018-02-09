@@ -15,8 +15,7 @@ import * as appStrings from "_core/constants/appStrings";
 import appConfig from "constants/appConfig";
 import MiscUtil from "_core/utils/MiscUtil";
 import { MapContextMenu, CoordinateTracker } from "_core/components/Map";
-import { MapContainer, MapControlsContainer } from "components/App";
-import { SettingsContainer } from "_core/components/Settings";
+import { MapContainer, MapControlsContainer, SettingsContainer } from "components/App";
 import { ShareContainer } from "_core/components/Share";
 import { LayerInfoContainer } from "_core/components/LayerInfo";
 import { LoadingContainer } from "_core/components/Loading";
@@ -76,7 +75,7 @@ export class AppContainer extends Component {
             window.requestAnimationFrame(() => {
                 setTimeout(() => {
                     // initialize the maps
-                    this.props.initializeMap(appStrings.MAP_LIB_3D, "map3D");
+                    this.props.initializeMap(appStrings.MAP_LIB_2D, "map2D");
 
                     // set initial view
                     this.props.setMapView({ extent: appConfig.DEFAULT_BBOX_EXTENT }, true);
