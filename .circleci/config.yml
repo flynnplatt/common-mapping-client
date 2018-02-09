@@ -1,0 +1,65 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+    build:
+        branches:
+            ignore:
+                - gh-pages
+        docker:
+            # specify the version you desire here
+            - image: circleci/node:9-browsers
+
+        working_directory: ~/repo
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                keys:
+                    - v1-dependencies-{{ checksum "package.json" }}
+                    # fallback to using the latest cache if no exact match is found
+                    - v1-dependencies-
+            - run:
+                name: Install dependencies
+                command: npm install
+
+            - save_cache:
+                paths:
+                    - node_modules
+                key: v1-dependencies-{{ checksum "package.json" }}
+
+            - run:
+                name: Run tests
+                command: npm test --includecoretests
+
+            # - run:
+            #     name: Report coverage to Coveralls
+            #     command: cat ./test-results/report/lcov.info | node_modules/coveralls/bin/coveralls.js
+            #     when: always
+
+            - store_test_results:
+                path: ./test-results/junit
+
+            - store_artifacts:
+                path: ./test-results/junit
+
+            - run:
+                name: Cleanup unneed test files
+                command: rm -rf ./test-results/report ./test-results/junit
+
+            - run:
+                name: Run build
+                command: npm run build
+
+            - add_ssh_keys:
+                fingerprints:
+                    - "69:96:19:08:74:1a:ae:06:39:66:e4:b6:a2:1a:a4:a5"
+
+            - deploy:
+                name: Deploy to Github Pages
+                command: scripts/deploy.sh
+
