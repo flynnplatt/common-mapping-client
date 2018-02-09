@@ -15,7 +15,9 @@ const CORE_CONFIG = Immutable.fromJS(coreConfig);
 const OPS_CONFIG = Immutable.fromJS(window.APPLICATION_CONFIG);
 
 // define your overrides for Core config here
-const APP_CONFIG = Immutable.fromJS({});
+const APP_CONFIG = Immutable.fromJS({
+    APP_TITLE: "CMC - 2D Only"
+});
 
 // define and export the final config
 const appConfig = CORE_CONFIG.mergeDeep(APP_CONFIG)
