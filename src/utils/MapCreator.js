@@ -6,7 +6,7 @@
  */
 
 import * as appStrings from "_core/constants/appStrings";
-import MapWrapperCesium from "_core/utils/MapWrapperCesium";
+import MapWrapperCesium from "utils/MapWrapperCesium";
 
 // creates a new object that abstracts a mapping library
 /**

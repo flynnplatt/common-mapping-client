@@ -5,35 +5,12 @@
 
 import MapReducerCore from "_core/reducers/reducerFunctions/MapReducer";
 import * as appStrings from "_core/constants/appStrings";
-import { createMap } from "utils/3d-only/MapCreator";
+import { createMap } from "utils/MapCreator";
 
 //IMPORTANT: Note that with Redux, state should NEVER be changed.
 //State is considered immutable. Instead,
 //create a copy of the state passed and set new values on the copy.
 export default class MapReducer extends MapReducerCore {
-    static initializeMap(state, action) {
-        let map = createMap(action.mapType, action.container, state);
-        if (map && map.initializationSuccess) {
-            return state.setIn(["maps", action.mapType], map);
-        }
-
-        let contextStr = action.mapType === appStrings.MAP_LIB_3D ? "3D" : "2D";
-        return state.set(
-            "alerts",
-            state.get("alerts").push(
-                alert.merge({
-                    title: appStrings.ALERTS.CREATE_MAP_FAILED.title,
-                    body: appStrings.ALERTS.CREATE_MAP_FAILED.formatString.replace(
-                        "{MAP}",
-                        contextStr
-                    ),
-                    severity: appStrings.ALERTS.CREATE_MAP_FAILED.severity,
-                    time: new Date()
-                })
-            )
-        );
-    }
-
     static updateLayerOrder(state, action) {
         // use the 3D map as it is the only one available
         const map3D = state.getIn(["maps", appStrings.MAP_LIB_3D]);
