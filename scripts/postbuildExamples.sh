@@ -29,5 +29,8 @@ for path in ./example_*; do
 
     # move directory into dist for serving
     mv ${dirname} dist/
+
+    # copy over the index.html file
+    cp ./src/index_examples.html dist/index.html
 done
 
