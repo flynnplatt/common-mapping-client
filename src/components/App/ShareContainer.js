@@ -10,7 +10,7 @@ import { bindActionCreators } from "redux";
 import * as appActions from "_core/actions/appActions";
 import * as appStrings from "_core/constants/appStrings";
 import appConfig from "constants/appConfig";
-import { ShareContainer as ShareContainerCore } from "_core/components/share/ShareContainer.js";
+import { ShareContainer as ShareContainerCore } from "_core/components/Share/ShareContainer.js";
 
 export class ShareContainer extends ShareContainerCore {
     getActiveLayerString() {
