@@ -51,17 +51,13 @@ jobs:
                 name: Cleanup unneed test files
                 command: rm -rf ./test-results/report ./test-results/junit
 
-            # - run:
-            #     name: Run build
-            #     command: npm run build
-
             - run:
                 name: Run build
-                command: npm run build:examples
+                command: npm run build
 
             - add_ssh_keys:
                 fingerprints:
-                    - "${CIRCLECI_SSH_FINGERPRINT}"
+                    - "69:96:19:08:74:1a:ae:06:39:66:e4:b6:a2:1a:a4:a5"
 
             - deploy:
                 name: Deploy to Github Pages
